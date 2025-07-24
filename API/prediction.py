@@ -12,6 +12,11 @@ except Exception as e:
     print("Failed to load model or scaler:", e)
     model = None
     scaler = None
+
+@app.get("/")
+def root():
+    return {"message": "Bus Wait Time Predictor API is running successfully!"}
+
 ## Define input structure
 class InputData(BaseModel):
     features: list   # List of features for prediction
