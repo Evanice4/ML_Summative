@@ -45,7 +45,9 @@ This dataset was tailored to reflect realistic bus station conditions in Rwanda,
 **Conclusion**: Random Forest performed the best and was saved as the final model for deployment.
 
 ## API Deployment (FastAPI)
-The prediction API is built with **FastAPI** and can be used to predict wait time based on 32 input features.
+The prediction API is built with **FastAPI** and can be used to predict wait time based on 32 input features and it's hosted on render.
+- Render Response screenshot (Render_response.PNG)
+- Live API URL: https://bus-wait-time-api.onrender.com/docs
 
 ## How to Run the API
 

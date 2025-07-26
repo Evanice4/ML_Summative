@@ -6,8 +6,8 @@ import numpy as np
 app = FastAPI(title="Bus Wait Time Predictor", description="API to predict wait times at bus stations in Rwanda")
 # Load saved model and scaler
 try:
-    model = joblib.load("../linear_regression/random_forest_model.pkl")
-    scaler = joblib.load("../linear_regression/scaler.pkl")
+    model = joblib.load("random_forest_model.pkl")
+    scaler = joblib.load("scaler.pkl")
 except Exception as e:
     print("Failed to load model or scaler:", e)
     model = None
