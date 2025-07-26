@@ -40,7 +40,7 @@ This dataset was tailored to reflect realistic bus station conditions in Rwanda,
 | Model                | RMSE   |
 |----------------------|--------|
 | Linear Regression    | 2.71   |
-| Decision Tree        | 1.90   |
+| Decision Tree        | 1.88   |
 | Random Forest        | 1.71   |
 **Conclusion**: Random Forest performed the best and was saved as the final model for deployment.
 
@@ -62,7 +62,7 @@ Below is an example of a successful prediction using the deployed API:
 
 ## Tools/Libraries Used
 - Vs code
-- Checkout: (requirements.txt) for a full list of all libraries used in the project.
+- Checkout: (API/requirements.txt) for a full list of all libraries used in the project.
 
 ## Mission Statement
 

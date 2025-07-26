@@ -1,0 +1,8 @@
+services:
+  - type: web
+    name: bus-wait-time-api
+    env: python
+    region: oregon  # or keep default
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn prediction:app --host 0.0.0.0 --port 10000
+    plan: free
