@@ -46,8 +46,10 @@ This dataset was tailored to reflect realistic bus station conditions in Rwanda,
 
 ## API Deployment (FastAPI)
 The prediction API is built with **FastAPI** and can be used to predict wait time based on 32 input features and it's hosted on render.
-- Render Response screenshot (Render_response.PNG)
+- Render Response screenshot (render-response.PNG)
 - Live API URL: https://bus-wait-time-api.onrender.com/docs
+- Sample input: [0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 2.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 2.3, 0.0, 1.0, 0.0]
+
 
 ## How to Run the API
 
