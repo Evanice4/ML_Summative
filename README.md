@@ -4,28 +4,19 @@
 This project predicts the expected **bus wait time (in minutes)** at different bus stations in Rwanda based on time of day, location, and passenger conditions. The model is built using **Linear Regression**, **Decision Tree**, and **Random Forest**, and the best model is deployed via a **FastAPI** API.
 
 ##  Project Structure
-ML_Summative/
-├── linear_regression/
-│ ├── bus_wait_prediction.ipynb ← Jupyter notebook with EDA + modeling
-│ ├── scaler.pkl ← Trained scaler
-│ ├── random_forest_model.pkl ← Best-performing model
-├── API/
-│ ├── prediction.py ← FastAPI app
-├── requirements.txt
-├── README.md
-└── .gitignore
+   ML_Summative/
+   ├── linear_regression/
+   │ ├── bus_wait_prediction.ipynb <= Jupyter notebook with EDA + modeling
+   ├── API/
+   │ ├── prediction.py <= FastAPI 
+   ├── scaler.pkl <= Trained scaler
+   │ ├── random_forest_model.pkl <= Best-performing model
+   ├── requirements.txt
+   └── bus_wait_time <= flutter app  
+   ├── README.md
+   └── .gitignore
 
-## Dataset
-Since real data wasn’t available, a **simulated dataset** was created using Python. It includes:
 
-- Time of day (hour:minute)
-- Weather and station conditions
-- City/station name (e.g. Nyanza, Gatenga, Nyamirambo, Kagugu)
-- Number of people at station
-- Day of week
-- Target: `expected_wait_time_min`
-
-This dataset was tailored to reflect realistic bus station conditions in Rwanda, based of my experience.
 
 ## Model Building (Notebook)
 1. Loaded and explored the data
@@ -48,21 +39,23 @@ This dataset was tailored to reflect realistic bus station conditions in Rwanda,
 The prediction API is built with **FastAPI** and can be used to predict wait time based on 32 input features and it's hosted on render.
 - Render Response screenshot (render-response.PNG)
 - Live API URL: https://bus-wait-time-api.onrender.com/docs
-- Sample input: [0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 2.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 2.3, 0.0, 1.0, 0.0]
+
+- Sample input: {
+  "features": [0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 1.0, 2.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 2.3, 0.0, 1.0, 0.0]
+}
+- Swagger Prediction successful response Screenshot (swagger_response.PNG)
 
 
-## How to Run the API
+## How to Run the App
 
-1. **Activate your virtual environment**:
-   ```bash
-   .\venv\Scripts\activate
-2. cd API
-3. uvicorn prediction:app --reload
-4. Open Swagger Docs  and visit the URL in your browser.
+- **Requirements** : Flutter SDK and VS code or Android Studio
+- Clone the repo
+- Open the terminal and navigate to the flutter project folder (bus_wait_time)
+- Get dependencies and launch the emulator
+- Start the app by running: **flutter run** in your terminal (This will build and launch the app on the emulator)
 
-## API Response Screenshot
-Below is an example of a successful prediction using the deployed API:
- - Swagger Prediction Screenshot (swagger_response.PNG)
+## Demo link
+- https://youtu.be/g_CbDmSZuOA
 
 ## Tools/Libraries Used
 - Vs code
@@ -70,15 +63,20 @@ Below is an example of a successful prediction using the deployed API:
 
 ## Mission Statement
 
-This project aims to address the unpredictability of bus wait times in Rwanda's public transport system.  
-As a regular commuter, I identified long, uncertain wait times at bus stations as a recurring problem.  
-Using machine learning, I built a model that predicts expected wait times based on various station and time-related factors.  
-The solution is context-specific and tailored to reflect realistic transport conditions in Rwanda.  
-My mission is to apply data-driven methods to improve daily commuting experiences in local communities.
+This project aims to address the unpredictability of bus wait times in Rwanda's public transport system. As a regular commuter, I identified long, uncertain wait times at bus stations as a recurring problem. Using machine learning, I built a model that predicts expected wait times based on various station and time-related factors. The solution is context-specific and tailored to reflect realistic transport conditions in Rwanda. My mission is to apply data-driven methods to improve daily commuting experiences in local communities.
 
 
 ## Dataset Acknowledgement
   
   The dataset was **simulated based on personal experience** using public transport in Rwanda.  
 As a commuter, I noticed long, unpredictable wait times at bus stations — which inspired this idea for my **capstone project**.
-This work reflects my attempt to address a real problem that affects many Rwandans on a daily basis.
+The **simulated dataset** includes:
+
+- Time of day (hour:minute)
+- Weather and station conditions
+- City/station name (e.g. Nyanza, Gatenga, Nyamirambo, Kagugu)
+- Number of people at station
+- Day of week
+- Target: `expected_wait_time_min`
+
+This dataset was tailored to reflect realistic bus station conditions in Rwanda, based of my experience.
